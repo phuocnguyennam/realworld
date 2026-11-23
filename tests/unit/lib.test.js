@@ -41,9 +41,14 @@ describe('Unit Tests: Helpers & Utilities (lib.js)', () => {
     test('7. should return false for non-numeric strings', () => {
       const [, ok] = lib.validatePositiveInteger('abc');
       expect(ok).toBe(false);
+    test('8. should return true and 0 for string "0"', () => {
+      const [val, ok] = lib.validatePositiveInteger('0');
+      expect(ok).toBe(true);
+      expect(val).toBe(0);
+    });
+
     });
   });
-
   describe('validateParam', () => {
     test('8. should return defaultValue if parameter is undefined in object', () => {
       const res = lib.validateParam({}, 'limit', lib.validatePositiveInteger, 20);
