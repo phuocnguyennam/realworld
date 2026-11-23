@@ -47,7 +47,6 @@ describe('Unit Tests: Helpers & Utilities (lib.js)', () => {
       expect(ok).toBe(true);
       expect(val).toBe(0);
     });
-    });
   });
   describe('validateParam', () => {
     test('8. should return defaultValue if parameter is undefined in object', () => {
