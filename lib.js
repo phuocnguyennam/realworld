@@ -72,3 +72,10 @@ function validateParam(obj, prop, validator, defaultValue) {
   }
 }
 exports.validateParam = validateParam
+function formatArticleSlug(title) {
+  if (title === null) return ''
+  if (typeof title !== 'string') return ''
+  if (!title.trim()) return ''
+  return title.trim().toLowerCase().replace(/\s+/g, '-')
+}
+exports.formatArticleSlug = formatArticleSlug
